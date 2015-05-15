@@ -1,0 +1,61 @@
+package resume;
+
+import Engineers.IT;
+
+class Ismaïl extends NGUYEN implements ISoftwareEngineer {
+	private static Ismaïl m_instance = new Ismaïl();	
+	
+	private Date m_birthdate = new Date("08-30-1992");
+	private Nationality m_nationality = new Nationality("fr-FR");
+	private Location m_location = new Location("", "Romainville", "France");
+	
+	public List<Education> m_listOfEducation = new ArrayList<Education>();
+	
+	private Ismaïl() {
+	}
+	
+	private static Ismaïl getInstance() {
+		return m_instance;
+	}
+	
+	public List<Education> getEducation() {
+		//Integer _endDate = new Date("2015");
+		
+		m_listOfEducation.add("BSc of Software Architecture",
+								"ESGI",
+								new Date("2014"),
+								new Date("2015")
+								);
+		
+		m_listOfEducation.add("2-year technical degree of IT",
+								"Lycée Louis Armand",
+								null,
+								new Date("2014")
+								);
+							
+		m_listOfEducation.add("Baccalauréat Scientifique",
+								"ESGI",
+								null,
+								new Date("2015")
+								);
+							
+		/*foreach(Education _education : m_listOfEducation)
+		{
+			_education.setEndDate(_endDate--);
+		}*/
+		
+		return m_listOfEducation;
+	}
+	
+	public String contact(Method m) {
+		switch(m.getName())
+		{
+			case "Phone":
+				return "+33 (0)7 64 00 07 61";
+				break;
+			case "Email":
+				return "me@nguyenismail.com";
+				break;
+		}
+	}
+}
